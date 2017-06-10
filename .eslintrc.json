@@ -1,0 +1,18 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "standard",
+        "promise",
+        "mocha"
+    ],
+    "rules": {
+      "no-multi-spaces": [0, {
+          "exceptions": {
+              "VariableDeclarator": true
+          }
+      }],
+      "comma-style": 0,
+      "one-var": 0,
+      "no-undef": 0
+    }
+}
