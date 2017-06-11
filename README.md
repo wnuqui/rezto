@@ -1,4 +1,4 @@
-# rezto
+# rezto [![wercker status](https://app.wercker.com/status/bdd84c7a11c124e5831a5fc96822a4ea/s/master "wercker status")](https://app.wercker.com/project/byKey/bdd84c7a11c124e5831a5fc96822a4ea)
 
 A CLI and library to list restaurants (found in some of CBD in Philippines). Results are from TripAdvisor.
 
