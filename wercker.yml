@@ -1,0 +1,8 @@
+box: node:4.2.6-slim
+
+build:
+  steps:
+    - script:
+        code: export NODE_ENV='test'
+    - npm-install
+    - npm-test
