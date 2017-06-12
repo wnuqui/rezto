@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import _          from 'lodash'
-import rezto      from '../src/index'
+import rezto      from '../../src/index'
 import nock       from 'nock'
 
 describe('getRestaurants', () => {
@@ -8,12 +8,12 @@ describe('getRestaurants', () => {
     beforeEach(() => {
       nock('https://www.tripadvisor.com.ph')
         .get(/RestaurantSearch/)
-        .replyWithFile(200, __dirname + '/fixtures/restaurants.html') /* eslint no-path-concat: 0 */
+        .replyWithFile(200, __dirname + '/../fixtures/restaurants.html') /* eslint no-path-concat: 0 */
 
       nock('https://www.tripadvisor.com.ph')
         .get(/Restaurant_Review/)
         .times(30)
-        .replyWithFile(200, __dirname + '/fixtures/restaurant-detail.html')
+        .replyWithFile(200, __dirname + '/../fixtures/restaurant-detail.html')
     })
 
     it('async return restaurants', async () => {
