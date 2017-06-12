@@ -7,4 +7,6 @@ build:
     - npm-install
     - npm-test
     - script:
+        code: npm run cover
+    - script:
         code: bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
