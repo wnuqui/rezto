@@ -38,4 +38,4 @@ const urlFor = (options) => {
   return TRIPADVISOR_URL + '?' + toQueryString(query)
 }
 
-export default { urlFor, getGeo }
+export default { urlFor, getGeo, getEstablishmentType, getSortOrder, getBatchOfRestaurants, toQueryString }
