@@ -19,10 +19,6 @@ const getRestaurants = (options) => {
         .all(args.promises)
         .then(onGetRestaurantAddressesFulfilled(args.restaurants))
     })
-
-    .catch((error) => {
-      console.log(error)
-    })
 }
 
 const getRestaurantDetails = (html) => {

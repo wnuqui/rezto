@@ -35,8 +35,8 @@ const onFind = (options) => {
         console.log('Reviews: ' + restaurant.reviews.count)
       })
     })
-    .catch((error) => {
-      console.log(error)
+    .catch(() => {
+      console.log('Oh, seems to be an error during http request... Please try again!')
     })
 }
 
