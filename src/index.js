@@ -128,4 +128,4 @@ const getAddress = ($, url) => {
   return address
 }
 
-export default { getRestaurants }
+export default { getRestaurantDetails, getRestaurants }

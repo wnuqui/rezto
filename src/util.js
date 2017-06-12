@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import {
   TRIPADVISOR_URL,
   GEO_MAP,
@@ -17,11 +18,9 @@ const getBatchOfRestaurants = (batchNumber = 1) => `a${(batchNumber - 1) * 30}`
 const toQueryString = (object) => {
   const parts = []
 
-  for (let i in object) {
-    if (object.hasOwnProperty(i)) {
-      parts.push(encodeURIComponent(i) + '=' + encodeURIComponent(object[i]))
-    }
-  }
+  _.forIn(object, (value, key) => {
+    parts.push(encodeURIComponent(key) + '=' + encodeURIComponent(value))
+  })
 
   return parts.join('&')
 }
@@ -38,4 +37,4 @@ const urlFor = (options) => {
   return TRIPADVISOR_URL + '?' + toQueryString(query)
 }
 
-export default { urlFor, getGeo }
+export default { urlFor, getGeo, getEstablishmentType, getSortOrder, getBatchOfRestaurants, toQueryString }
