@@ -37,4 +37,29 @@ const urlFor = (options) => {
   return TRIPADVISOR_URL + '?' + toQueryString(query)
 }
 
-export default { urlFor, getGeo, getEstablishmentType, getSortOrder, getBatchOfRestaurants, toQueryString }
+const prettifyAddress = (address) => {
+  let parts = _.filter(_.valuesIn(address), (part) => part !== '')
+
+  parts = _.map(parts, (part) => {
+    return (typeof part === 'object') ? part.join(', ') : part
+  })
+
+  parts = _.map(parts, (part) => {
+    return part.trim()
+            .replace(/,$/, '')
+            .replace(/,/, ', ')
+            .replace(/\s+/, ' ')
+  })
+
+  return parts.join(', ')
+}
+
+export default {
+  urlFor,
+  getGeo,
+  getEstablishmentType,
+  getSortOrder,
+  getBatchOfRestaurants,
+  toQueryString,
+  prettifyAddress
+}
